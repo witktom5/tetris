@@ -130,13 +130,16 @@ function checkCollision(currentPiece, currentGrid, direction) {
   return true;
 }
 
-function checkRows() {
+async function checkRows() {
   let rowsRemoved = 0;
   for (let i = 1; i <= 20; i++) {
     const droppedPieces = document.querySelectorAll(
       `.dropped-piece[data-row="${i}"]`
     );
     if (droppedPieces.length === 10) {
+      const rowBlocks = document.querySelectorAll(`.block[data-row="${i}"]`);
+      rowBlocks.forEach((block) => block.classList.add('removed'));
+      await new Promise((resolve) => setTimeout(resolve, 200));
       rowsRemoved++;
       linesCleared++;
       if (linesCleared === 5) {

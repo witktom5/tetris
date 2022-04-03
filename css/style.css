@@ -55,6 +55,16 @@ body {
   border: none;
 }
 
+.dropped-piece {
+  transition: opacity 150ms;
+  opacity: 0.85;
+}
+
+.removed {
+  box-shadow: 0 0 2vh white;
+  transition: box-shadow 200ms;
+}
+
 .evenColumn {
   background: hsl(0, 0%, 10%);
 }
