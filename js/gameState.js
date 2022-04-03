@@ -198,8 +198,9 @@ function moveDroppedPieces(removedRow) {
   }
 }
 
-function gameOver() {
+async function gameOver() {
   isGameOver = true;
+  await new Promise((resolve) => setTimeout(resolve, 600));
   message.textContent = `Game Over! Your score is ${score}. Do you want to play again?`;
   dialogGame.classList.toggle('hidden');
   disabledBtns.forEach((btn) => (btn.disabled = true));
@@ -218,6 +219,7 @@ function gameOver() {
 function restart() {
   if (paused) unpause();
   if (gameFlowInterval) clearInterval(gameFlowInterval);
+  if (hardDropInterval) clearInterval(hardDropInterval);
   if (firstGame) firstGame = false;
   if (!isGameOver) {
     document.removeEventListener('keydown', controls);

@@ -57,7 +57,7 @@ body {
 
 .dropped-piece {
   transition: opacity 150ms;
-  opacity: 0.85;
+  opacity: 0.8;
 }
 
 .removed {
@@ -98,12 +98,10 @@ body {
 }
 
 .death {
-  background: radial-gradient(
-    hsl(0, 50%, 45%),
-    hsl(0, 25%, 25%),
-    hsl(0, 0%, 10%),
-    hsl(0, 0%, 0%)
-  );
+  transition: box-shadow 600ms;
+  box-shadow: 0 0 2vh hsl(0, 50%, 50%), inset 0 0 2vh hsl(0, 50%, 25%);
+  background: hsl(0, 0%, 0%);
+  border: solid 0.1vh hsl(0, 0%, 18%);
 }
 
 .container {
@@ -164,7 +162,7 @@ button:disabled {
   border-radius: 0.75em;
   z-index: 100;
   color: rgb(176, 233, 224);
-  top: 5%;
+  top: 15%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 4.5em;
@@ -183,7 +181,7 @@ button:disabled {
 }
 
 .dialog-game {
-  top: 15%;
+  top: 50%;
 }
 
 .hidden {
