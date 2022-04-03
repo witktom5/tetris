@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Tetris</title>
+</head>
+
+<body>
+    <h2 class="dialog dialog-pause hidden">Game Paused</h2>
+    <div class="dialog dialog-game hidden">
+        <h2 id="message"></h2>
+        <button id="yes">Yes</button>
+        <button id="no">No</button>
+    </div>
+
+    <div class="board-wrap">
+        <div class="grid-container">
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Level: <span class="level-display">1</span></h2>
+        <h2>Score: <span class="score-display">0</span></h2>
+        <nav class="menu">
+            <button id="left" class="toggle-disabled">Left</button>
+            <button id="up" class="toggle-disabled">Rotate</button>
+            <button id="right" class="toggle-disabled">Right</button>
+            <button id="down" class="toggle-disabled">Down</button>
+            <button id="drop" class="toggle-disabled">Drop</button>
+            <button id="start">Start</button>
+            <button id="pause" class="toggle-disabled">Pause</button>
+        </nav>
+        <h2>Controls</h2>
+        <div class="controls">
+            <h3>arrow left / a - left</h3>
+            <h3>arrow right / d - right</h3>
+            <h3>arrow down / s - down</h3>
+            <h3>arrow up / w - rotate</h3>
+            <h3>space - drop</h3>
+            <h3>p - pause</h3>
+        </div>
+    </div>
+
+
+    <script src="js/pieces.js"></script>
+    <script src="js/movement.js"></script>
+    <script src="js/gameState.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

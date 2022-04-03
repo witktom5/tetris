@@ -1,0 +1,210 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  font-family: monospace;
+  color: hsl(0, 0%, 90%);
+  user-select: none;
+}
+
+body {
+  font-family: monospace;
+  margin: 0;
+  background: hsl(205, 60%, 9%);
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  gap: 0;
+  justify-items: center;
+}
+
+.board-wrap {
+  margin: 2vh auto;
+  height: 95vh;
+  width: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(#272640, hsl(287, 25%, 20%));
+  border-radius: 2vh;
+  box-shadow: 0 0 0.3vh black;
+}
+
+.grid-container {
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-flow: column wrap;
+  box-sizing: content-box;
+  height: 90vh;
+  width: 45vh;
+  align-content: center;
+  border: solid 0.5vh hsl(306, 100%, 6%);
+  box-shadow: 0 0 0.25vh hsl(278, 98%, 13%);
+}
+
+.block {
+  align-self: center;
+  height: 4.5vh;
+  width: 4.5vh;
+  background: #1f1f1f;
+  border: solid 0.1vh hsl(0, 0%, 18%);
+}
+
+.piece,
+.dropped-piece {
+  border: none;
+}
+
+.evenColumn {
+  background: hsl(0, 0%, 10%);
+}
+
+.red {
+  background: radial-gradient(hsl(0, 65%, 54%), hsl(0, 65%, 33%));
+}
+
+.blue {
+  background: radial-gradient(hsl(230, 65%, 59%), hsl(230, 65%, 36%));
+}
+
+.yellow {
+  background: radial-gradient(hsl(60, 65%, 49%), hsl(60, 65%, 28%));
+}
+
+.purple {
+  background: radial-gradient(hsl(273, 65%, 59%), hsl(273, 65%, 38%));
+}
+
+.magenta {
+  background: radial-gradient(hsl(300, 65%, 44%), hsl(300, 65%, 24%));
+}
+
+.green {
+  background: radial-gradient(hsl(120, 65%, 49%), hsl(120, 65%, 28%));
+}
+
+.orange {
+  background: radial-gradient(hsl(39, 65%, 49%), hsl(39, 65%, 28%));
+}
+
+.death {
+  background: radial-gradient(
+    hsl(0, 50%, 45%),
+    hsl(0, 25%, 25%),
+    hsl(0, 0%, 10%),
+    hsl(0, 0%, 0%)
+  );
+}
+
+.container {
+  justify-self: start;
+  align-self: center;
+}
+
+h2 {
+  font-size: 4vh;
+  text-align: center;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+#up,
+#down,
+#drop,
+#pause,
+#start {
+  grid-column: span 2;
+}
+
+button {
+  margin: 0.5rem;
+  padding: 1rem;
+  font-size: 3vh;
+  background: hsl(217, 30%, 18%);
+  border: solid 2px #11001c;
+  border-radius: 0.5em;
+  transition: all 250ms;
+}
+
+button:hover {
+  background: hsl(217, 30%, 20%);
+}
+
+button:active {
+  background: hsl(217, 30%, 22%);
+}
+
+button:disabled {
+  background: hsl(217, 30%, 10%);
+  color: rgba(255, 255, 255, 0.15);
+}
+
+.dialog {
+  position: absolute;
+  background: hsla(0, 0%, 0%, 0.7);
+  padding: 0.1em 0.4em;
+  border-radius: 0.75em;
+  z-index: 100;
+  color: rgb(176, 233, 224);
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4.5em;
+  text-align: center;
+}
+
+.dialog h2 {
+  margin: 0;
+  padding-top: 1rem;
+}
+
+.dialog button {
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  width: 5em;
+}
+
+.dialog-game {
+  top: 15%;
+}
+
+.hidden {
+  display: none;
+}
+
+#yes,
+#no {
+  user-select: initial;
+}
+
+@media (max-width: 800px) {
+  .container {
+    justify-self: center;
+  }
+  .controls {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    grid-template-columns: 1fr;
+  }
+
+  #pause,
+  #start,
+  #left,
+  #down,
+  #right,
+  #up,
+  #drop {
+    grid-row: span 1;
+    grid-column: span 1;
+  }
+}
