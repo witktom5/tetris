@@ -72,7 +72,7 @@ function checkGameOver(checkGameOverBlock) {
   }
 }
 
-function placePiece(piece) {
+async function placePiece(piece) {
   piece.forEach((block) => {
     block.classList.remove('piece');
     block.classList.add('dropped-piece');
@@ -84,7 +84,7 @@ function placePiece(piece) {
     gameFlowInterval = setInterval(moveDown, gameSpeed);
   }
 
-  checkRows();
+  await checkRows();
   piecePosition = { x: 3, y: 0 };
   spawningPoint = baseSpawningPoint;
   spawnedShape = 0;
