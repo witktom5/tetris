@@ -14,7 +14,7 @@ body {
   display: grid;
   grid-template-columns: 2fr 2fr;
   gap: 0;
-  justify-items: center;
+  justify-content: center;
 }
 
 .board-wrap {
@@ -198,6 +198,7 @@ button:disabled {
     grid-template-columns: 1fr;
   }
   .board-wrap {
+    justify-self: center;
     margin: 10vh 0 0;
     height: 72vh;
     width: 37vh;
@@ -218,12 +219,19 @@ button:disabled {
   }
 
   .info {
+    padding: 0;
+    margin: 0;
+    line-height: 1;
     display: flex;
     gap: 1em;
-    justify-content: start;
+    justify-self: center;
     position: absolute;
     opacity: 0.3;
     top: 0;
+  }
+
+  h2 {
+    font-size: 4vh;
   }
 
   .controls,
@@ -234,12 +242,13 @@ button:disabled {
   nav {
     margin-top: 1.5vh;
     grid-row: 1;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   button {
-    margin: 0.1em;
-    padding: 0.2em;
+    margin: 0.15vh;
+    width: 10vh;
+    font-size: 1em;
   }
 
   #left {
@@ -258,22 +267,22 @@ button:disabled {
   }
 
   #drop {
-    grid-row: 1;
-    grid-column: 1;
+    grid-row: 3;
+    grid-column: 2;
   }
 
   #start {
     grid-row: 1;
-    grid-column: 4;
+    grid-column: 1;
   }
 
   #pause {
-    grid-row: 2;
-    grid-column: 4;
+    grid-row: 1;
+    grid-column: 3;
   }
 
   #up {
-    grid-row: span 1;
-    grid-column: span 1;
+    grid-row: 1;
+    grid-column: 2;
   }
 }
